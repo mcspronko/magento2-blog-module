@@ -5,6 +5,7 @@
         <column xsi:type="smallint" name="post_id" unsigned="false" nullable="false" identity="true"
                 comment="Post ID"/>
         <column xsi:type="varchar" name="title" nullable="true" length="255" comment="Post Title"/>
+        <column xsi:type="varchar" name="url_key" nullable="true" length="255" comment="Post Url Key"/>
         <column xsi:type="text" name="meta_keywords" nullable="true" comment="Post Meta Keywords"/>
         <column xsi:type="text" name="meta_description" nullable="true" comment="Post Meta Description"/>
         <column xsi:type="mediumtext" name="content" nullable="true" comment="Post Content"/>
