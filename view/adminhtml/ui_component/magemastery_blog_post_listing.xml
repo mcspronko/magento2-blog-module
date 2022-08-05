@@ -8,7 +8,7 @@
     <settings>
         <buttons>
             <button name="add">
-                <url path="*/*/new"/>
+                <url path="*/*/edit"/>
                 <class>primary</class>
                 <label translate="true">Add New Post</label>
             </button>
