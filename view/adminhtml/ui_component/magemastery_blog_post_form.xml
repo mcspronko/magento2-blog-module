@@ -9,6 +9,10 @@
     </argument>
     <!-- form settings -->
     <settings>
+        <buttons>
+            <button name="save" class="MageMastery\Blog\Block\Adminhtml\Post\Edit\SaveButton" />
+            <button name="back" class="MageMastery\Blog\Block\Adminhtml\Post\Edit\BackButton" />
+        </buttons>
         <namespace>magemastery_blog_post_form</namespace>
         <dataScope>data</dataScope>
         <deps>
