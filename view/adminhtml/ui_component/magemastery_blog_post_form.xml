@@ -65,6 +65,25 @@
                 <dataScope>title</dataScope>
             </settings>
         </field>
+        <field name="url_key" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">post</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">URL Key</label>
+                <dataScope>identifier</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+    <fieldset name="content">
+        <settings>
+            <collapsible>true</collapsible>
+            <label translate="true">Content</label>
+        </settings>
+
         <field name="content" template="ui/form/field" formElement="wysiwyg">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -75,7 +94,7 @@
                 <additionalClasses>
                     <class name="admin__field-wide">true</class>
                 </additionalClasses>
-                <label/>
+                <label>Description</label>
                 <dataScope>content</dataScope>
             </settings>
             <formElements>
@@ -92,18 +111,6 @@
             <collapsible>true</collapsible>
             <label translate="true">Search Engine Optimization</label>
         </settings>
-        <field name="url_key" formElement="input">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">post</item>
-                </item>
-            </argument>
-            <settings>
-                <dataType>text</dataType>
-                <label translate="true">URL Key</label>
-                <dataScope>identifier</dataScope>
-            </settings>
-        </field>
         <field name="meta_title" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

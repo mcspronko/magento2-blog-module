@@ -9,7 +9,7 @@
              parent="Magento_Backend::content"
              resource="Magento_Backend::admin"/>
         <add id="MageMastery_Blog::post"
-             title="Posts"
+             title="Manage Posts"
              translate="title"
              module="MageMastery_Blog"
              sortOrder="0"
