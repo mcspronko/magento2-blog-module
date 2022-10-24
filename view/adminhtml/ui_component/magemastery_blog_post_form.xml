@@ -26,6 +26,9 @@
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
+        <settings>
+            <submitUrl path="magemastery_blog/post/save" />
+        </settings>
         <dataProvider class="MageMastery\Blog\Model\Post\DataProvider" name="magemastery_blog_post_form_data_source">
             <settings>
                 <requestFieldName>post_id</requestFieldName>
