@@ -26,7 +26,7 @@
             <updateUrl path="mui/index/render"/>
         </settings>
         <aclResource>Magento_Backend::admin</aclResource>
-        <dataProvider class="Magento\Cms\Ui\Component\DataProvider" name="magemastery_blog_post_listing_data_source">
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="magemastery_blog_post_listing_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>post_id</primaryFieldName>
@@ -186,7 +186,7 @@
                 <visible>false</visible>
             </settings>
         </column>
-        <actionsColumn name="actions" class="Magento\Cms\Ui\Component\Listing\Column\PageActions">
+        <actionsColumn name="actions" class="MageMastery\Blog\Ui\Component\Listing\Column\PostActions">
             <settings>
                 <indexField>post_id</indexField>
                 <resizeEnabled>false</resizeEnabled>
