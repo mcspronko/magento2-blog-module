@@ -1,18 +1,19 @@
 {
     "name": "maxpronko/magento2-blog-module",
-    "description": "Magento 2 Blog",
+    "description": "Mage Mastery Blog extension for Adobe Commerce/Magento Open Source",
     "type": "magento2-module",
     "license": "MIT",
     "authors": [
         {
             "name": "Max Pronko",
-            "email": "max.pronko@gmail.com"
+            "email": "max@pronkoconsulting.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "magento/framework": "^103.0",
-        "magento/module-backend": "^102.0"
+        "magento/framework": "^103",
+        "magento/module-backend": "^102",
+        "magento/module-ui": "^101"
     },
     "repositories": {
         "magento": {
