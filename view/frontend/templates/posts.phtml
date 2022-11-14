@@ -1,1 +1,18 @@
-<p>My Posts are going to be here...</p>
+<?php
+
+/** @var $block Template */
+/** @var $postsVideModel Posts */
+
+use MageMastery\Blog\ViewModel\Posts;
+use Magento\Framework\View\Element\Template;
+
+$postsViewModel = $block->getData('posts_view_model');
+$collection = $postsViewModel->getPosts(3);
+?>
+<?php if (!$collection->count()): ?>
+    <p>There are no posts in this blog.</p>
+<?php else: ?>
+    <?php foreach ($collection as $post): ?>
+        <p><?= $post->getData('title'); ?></p>
+    <?php endforeach; ?>
+<?php endif; ?>

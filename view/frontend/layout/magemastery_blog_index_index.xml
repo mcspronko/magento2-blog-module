@@ -7,7 +7,11 @@
             </action>
         </referenceBlock>
         <referenceBlock name="content">
-            <block template="MageMastery_Blog::posts.phtml" as="posts" />
+            <block template="MageMastery_Blog::posts.phtml" as="posts">
+                <arguments>
+                    <argument name="posts_view_model" xsi:type="object">MageMastery\Blog\ViewModel\Posts</argument>
+                </arguments>
+            </block>
         </referenceBlock>
     </body>
 </page>
