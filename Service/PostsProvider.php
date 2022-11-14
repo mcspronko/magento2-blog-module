@@ -13,11 +13,12 @@ class PostsProvider
     public function __construct(private CollectionFactory $collectionFactory)
     {}
 
-    public function getPosts(int $limit): Collection
+    public function getPosts(int $limit, int $currentPage): Collection
     {
         $collection = $this->getCollection();
         $collection->setOrder('creation_time', Select::SQL_DESC);
         $collection->setPageSize($limit);
+        $collection->setCurPage($currentPage);
 
         return $collection;
     }
