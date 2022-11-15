@@ -6,8 +6,10 @@
 use MageMastery\Blog\ViewModel\Posts;
 use Magento\Framework\View\Element\Template;
 
+/** @var Posts $postsViewModel */
 $postsViewModel = $block->getData('posts_view_model');
 $collection = $postsViewModel->getPosts(3);
+$pagerBlock = $this->getChildBlock('blog_pager');
 ?>
 <?php if (!$collection->count()): ?>
     <p>There are no posts in this blog.</p>
@@ -15,4 +17,7 @@ $collection = $postsViewModel->getPosts(3);
     <?php foreach ($collection as $post): ?>
         <p><?= $post->getData('title'); ?></p>
     <?php endforeach; ?>
+    <?php if ($pagerBlock): ?>
+        <?= $postsViewModel->getPager($collection, $pagerBlock); ?>
+    <?php endif; ?>
 <?php endif; ?>
