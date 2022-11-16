@@ -1,0 +1,21 @@
+<?php
+
+use MageMastery\Blog\Model\Post;
+use MageMastery\Blog\ViewModel\PostViewModel;
+use Magento\Framework\View\Element\Template;
+
+/** @var Post $post */
+/** @var PostViewModel $postViewModel */
+/** @var Template $block */
+
+$postViewModel = $block->getData('post_view_model');
+$post = $block->getData('post');
+?>
+<a href="<?= $postViewModel->getPostUrl($post); ?>">
+    <h3><?= $post->getData('title'); ?></h3>
+</a>
+<p>
+    <span class="author">Max Pronko</span>
+    <span class="published-date"><?= $block->formatDate($post->getData('creation_time')); ?></span>
+</p>
+<p><?= $post->getData('content'); ?></p>

@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace MageMastery\Blog\ViewModel;
 
+use MageMastery\Blog\Model\Post;
 use MageMastery\Blog\Model\ResourceModel\Post\Collection;
 use MageMastery\Blog\Service\PostsProvider;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
+use Magento\Framework\View\Element\Template;
 use Magento\Theme\Block\Html\Pager;
 
 class Posts implements ArgumentInterface
@@ -37,5 +39,11 @@ class Posts implements ArgumentInterface
             ->setCollection($collection);
 
         return $pagerBlock->toHtml();
+    }
+
+    public function getPostHtml(Template $block, Post $post): string
+    {
+        $block->setData('post', $post);
+        return $block->toHtml();
     }
 }

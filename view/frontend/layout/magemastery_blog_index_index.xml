@@ -12,6 +12,11 @@
                     <argument name="posts_view_model" xsi:type="object">MageMastery\Blog\ViewModel\Posts</argument>
                 </arguments>
                 <block class="Magento\Theme\Block\Html\Pager" name="blog_pager"/>
+                <block template="MageMastery_Blog::post.phtml" as="post">
+                    <arguments>
+                        <argument name="post_view_model" xsi:type="object">MageMastery\Blog\ViewModel\PostViewModel</argument>
+                    </arguments>
+                </block>
             </block>
         </referenceBlock>
     </body>
