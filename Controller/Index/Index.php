@@ -16,7 +16,7 @@ class Index implements HttpGetActionInterface
     public function execute(): ResultInterface
     {
         $page = $this->pageFactory->create();
-        $page->getConfig()->getTitle()->prepend(__('Blog'));
+        $page->getConfig()->getTitle()->set(__('Blog'));
 
         return $page;
     }
