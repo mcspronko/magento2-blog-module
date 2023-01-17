@@ -3,23 +3,18 @@
 namespace MageMastery\Blog\Controller\Post;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
-use Magento\Framework\App\RequestInterface;
-use Magento\Framework\Url;
+use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\PageFactory;
 
 class View implements HttpGetActionInterface
 {
     public function __construct(
-        private PageFactory $pageFactory,
-        private RequestInterface $request
+        private PageFactory $pageFactory
     ) {
     }
 
-    public function execute()
+    public function execute(): ResultInterface
     {
-        var_dump($this->request->getAlias(Url::REWRITE_REQUEST_PATH_ALIAS));
-        var_dump($this->request->getPathInfo());
-        var_dump($this->request->getParam('post_id'));
         return $this->pageFactory->create();
     }
 }
