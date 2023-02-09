@@ -33,6 +33,14 @@ class Save extends Action implements HttpPostActionInterface
                 $data['post_id'] = null;
             }
 
+            if (!empty($data['featured_image'][0]['name']) && isset($data['featured_image'][0]['tmp_name'])) {
+                $data['featured_image'] = $data['featured_image'][0]['name'];
+            } else {
+                unset($data['featured_image']);
+            }
+
+            $data['update_time'] = null;
+
             $model->setData($data);
 
             try {

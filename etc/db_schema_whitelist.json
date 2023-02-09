@@ -1,0 +1,19 @@
+{
+    "magemastery_blog_post": {
+        "column": {
+            "post_id": true,
+            "title": true,
+            "url_key": true,
+            "meta_keywords": true,
+            "meta_description": true,
+            "content": true,
+            "creation_time": true,
+            "update_time": true,
+            "meta_title": true,
+            "featured_image": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
