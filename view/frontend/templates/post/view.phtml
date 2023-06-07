@@ -3,17 +3,24 @@
 use MageMastery\Blog\Model\Post;
 use MageMastery\Blog\ViewModel\Post\PostView;
 use Magento\Framework\View\Element\Template;
+use Magento\Framework\Escaper;
 
 /** @var Post $post */
 /** @var PostView $postView */
 /** @var Template $block */
+/** @var Escaper $escaper */
 
 $postView = $block->getData('post_view_model');
 $post = $postView->getPost();
 ?>
-<h1><?= $post->getData('title'); ?></h1>
-<p>
+<h1><?= $escaper->escapeHtml($post->getData('title')); ?></h1>
+<?php if ($post->hasData('featured_image')): ?>
+    <img src="<?= $escaper->escapeUrl($postView->getFeaturedImageUrl($post)); ?>"
+         alt="<?= $escaper->escapeHtmlAttr($post->getData('title')); ?>"
+         loading="lazy" />
+<?php endif; ?>
+<div>
     <span class="author">Max Pronko</span>
-    <span class="published-date"><?= $block->formatDate($post->getData('creation_time')); ?></span>
-</p>
+    <span class="published-date"><?= $escaper->escapeHtml($block->formatDate($post->getData('creation_time'))); ?></span>
+</div>
 <p><?= $post->getData('content'); ?></p>

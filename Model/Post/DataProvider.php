@@ -80,6 +80,11 @@ class DataProvider extends ModifierPoolDataProvider
         $postData = $post->getData();
 
         $image = $postData['featured_image'];
+        
+        if (!$image) {
+            $this->loadedData[$post->getId()] = $postData;
+            return $this->loadedData;
+        }
 
         $imgDir = 'tmp/imageUploader/images';
         $baseUrl = $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
